@@ -1,0 +1,5 @@
+name: Name
+description: Custom filter to replace a firstname and lastname to lastname firstname.
+type: module
+package: custom
+core: 8.x
