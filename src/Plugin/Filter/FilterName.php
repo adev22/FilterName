@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains Drupal\name\Plugin\Filter\FilterCelebrate
+ * Contains Drupal\name\Plugin\Filter\FilterName
  */
 
 namespace Drupal\name\Plugin\Filter;
@@ -23,10 +23,7 @@ class FilterName extends FilterBase {
   public function process($text, $langcode) {
 
     //$text = "[name:FIRSTNAME:LASTNAME]";
-    $lastname =  preg_replace('/\[name:(.*):(.*)\]/i', '$2', $text);
-    $firstname = preg_replace('/\[name:(.*):(.*)\]/i', '$1', $text );
-    $result = "Name : $lastname $firstname";
-
+    $result =  preg_replace('/\[name:(.*):(.*)\]/i', 'Name : $2 $1', $text);
     return new FilterProcessResult($result);
     //return Name : LASTNAME FIRSTNAME
   }
